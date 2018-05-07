@@ -1,0 +1,13 @@
+:host {
+  display: block;
+  height: 100%;
+
+  main {
+    position: relative;
+    display: flex;
+    height: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+  }
+}

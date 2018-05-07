@@ -39,29 +39,17 @@ export class BokehComponent implements OnInit, AfterViewInit, OnDestroy {
   private theme: Theme;
 
   constructor(
-    private store: TappsStore,
   ) {
     this.onResize = this.onResize.bind(this);
     this.onRender = this.onRender.bind(this);
 
-    this.store.changes.pluck('theme').subscribe((theme: Theme) => {
-      if (!theme) { return; }
-
-      /* Transition from a previous theme */
-      if (this.theme) { this.timing.transition = 0; }
-      this.theme = theme;
-
-      if (!this.back) { return; }
-      this.createBackground();
-      this.renderBackground();
-    });
+    this.theme = {
+      primary: new Color(46, 2, 77),
+      secondary: new Color(7, 1, 8),
+    };
   }
 
   ngOnInit() {
-    const test = Color.FromAHex('#90ef629f');
-    // console.log(test.r, test.g, test.b, test.a);
-    // console.log(test.toHSLAString());
-    // const color = Color.toHSLA(light.hue, light.saturation, light.lightness, light.alpha);
   }
 
   ngAfterViewInit() {
@@ -232,10 +220,17 @@ export class BokehComponent implements OnInit, AfterViewInit, OnDestroy {
     const sizeBase = this.fore.canvas.width + this.fore.canvas.height;
     this.fore.lights.clear();
     for (let i = 0; i < sizeBase * 0.05; i++) {
+      /*
       const light = Light.White(
         MathX.randomBetween(1, sizeBase * 0.01), // Radius
         MathX.randomBetween(0.01, 0.05), // Alpha
       );
+      */
+      const light = new Light({
+        radius: MathX.randomBetween(1, sizeBase * 0.01),
+        blur: 0,
+        color: new Color(236, 209, 149, MathX.randomBetween(0.01, 0.2))
+      });
       light.setMovement({
         x: MathX.randomBetween(0, this.fore.canvas.width),
         y: MathX.randomBetween(0, this.fore.canvas.height),

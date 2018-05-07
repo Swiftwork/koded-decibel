@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BokehComponent } from './bokeh/bokeh.component';
+import { DecibelComponent } from './decibel/decibel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BokehComponent
+    BokehComponent,
+    DecibelComponent,
   ],
   imports: [
     BrowserModule
