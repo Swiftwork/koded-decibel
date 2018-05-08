@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { BokehComponent } from './bokeh/bokeh.component';
 import { DecibelComponent } from './decibel/decibel.component';
+import { DecibelService } from './decibel/decibel.service';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,9 @@ import { DecibelComponent } from './decibel/decibel.component';
   imports: [
     BrowserModule
   ],
-  providers: [],
+  providers: [
+    DecibelService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

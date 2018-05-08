@@ -1,1 +1,1 @@
-<div class="step" *ngFor="let step of steps"></div>
+<div class="step" [class.active]="this.decibel > step" [style.width]="calculateWidth(i) + '%'" *ngFor="let step of steps; let i = index">{{step}}</div>
