@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import DecibelMeter from 'decibel-meter';
 import { Subject } from 'rxjs';
+
+import DecibelMeter from 'decibel-meter';
 
 @Injectable()
 export class DecibelService {
@@ -13,7 +14,9 @@ export class DecibelService {
   constructor() {
     this.meter = new DecibelMeter();
     this.meter.sources.then(sources => console.log(sources));
-    this.meter.listenTo(0, (dB, percent, value) => this.$decibel.next(dB + 100));
   }
 
+  start() {
+    this.meter.listenTo(0, (dB, percent, value) => this.$decibel.next(dB + 100));
+  }
 }

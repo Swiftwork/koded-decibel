@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { DecibelService } from './decibel.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { DecibelService } from './decibel.service';
 export class DecibelComponent implements OnInit {
 
   @Input() min = 0;
-  @Input() max = 50;
+  @Input() max = 100;
   @Input() step = 5;
 
   public steps: number[];
@@ -33,5 +33,10 @@ export class DecibelComponent implements OnInit {
 
   calculateWidth(index: number) {
     return 100 - (80 / this.steps.length * index);
+  }
+
+  @HostListener('click')
+  start() {
+    this.decibelService.start();
   }
 }
