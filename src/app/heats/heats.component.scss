@@ -1,0 +1,29 @@
+:host {
+  .heat {
+    margin-bottom: 24px;
+    padding: 24px;
+    background-color: rgba(0, 0, 0, 0.5);
+
+    .participant {
+      color: #accedb;
+      cursor: pointer;
+
+      &:not(:first-child) {
+        margin-top: 6px;
+      }
+
+      &[aria-selected=true] {
+        color: white;
+      }
+
+      &.leader {
+        color: rgba(236, 209, 149, 0.9);
+      }
+    }
+
+    .score {
+      margin-left: 24px;
+      float: right;
+    }
+  }
+}

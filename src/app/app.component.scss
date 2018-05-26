@@ -11,9 +11,17 @@ $color: rgba(236, 209, 149, 0.9);
     height: 200px;
   }
 
+  .heats {
+    position: absolute;
+    top: 248px;
+    left: 24px;
+    z-index: 1;
+  }
+
   main {
     position: relative;
     display: flex;
+    padding-left: 240px;
     color: $color;
     height: 100%;
     flex-direction: column;

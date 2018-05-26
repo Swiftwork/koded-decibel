@@ -18,11 +18,13 @@ export class AppComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    let participants = localStorage.getItem('participants');
-    if (!participants) {
-      participants = window.prompt('Whom are the participants? Format "joe,jose,johan|mike,mick,may"');
-      localStorage.setItem('participants', participants);
+    let event = localStorage.getItem('participants');
+    if (!event) {
+      event = window.prompt('Whom are the participants? Format "joe,jose,johan|mike,mick,may"');
+      localStorage.setItem('participants', event);
     }
+
+    this.formatEvent(event);
 
     this.decibelService.decibel.subscribe((dB) => {
       this.decibel = Math.floor(Math.max(dB, this.decibel));
@@ -41,5 +43,9 @@ export class AppComponent implements OnInit {
         })),
       });
     });
+  }
+
+  public onParticipantSwitch(participant: IParticipant) {
+    this.decibel = 0;
   }
 }

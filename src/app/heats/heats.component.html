@@ -1,5 +1,14 @@
 <article class="heat"
   *ngFor="let heat of heats">
   {{heat.name}}
-  <div *ngFor="let participant of heat.participants">{{participant.name}}</div>
+
+  <div class="participant"
+    [class.leader]="isLeader(heat, participant)"
+    [attr.aria-selected]="isSelected(participant)"
+    (click)="selectParticipant(participant)"
+    *ngFor="let participant of heat.participants; let i = index">
+    {{i}}: {{participant.name}}
+    <span class="score">{{participant.score}} points</span>
+  </div>
+
 </article>

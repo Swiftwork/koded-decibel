@@ -3,7 +3,9 @@
 <img class="logo"
   src="../assets/images/logo.svg" />
 
-<c-heats></c-heats>
+<c-heats class="heats"
+  [heats]="heats"
+  (switch)="onParticipantSwitch($event)"></c-heats>
 
 <main>
   <h1 class="points">{{decibel}} points!</h1>
