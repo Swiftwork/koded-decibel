@@ -1,22 +1,57 @@
-$color: rgba(236, 209, 149, 0.9);
+$primary: rgba(236, 209, 149, 0.9);
+$secondary: rgba(53, 16, 70, 0.9);
 
 :host {
-  display: block;
-  width: 320px;
+  display: flex;
 
-  .step {
-    padding: 0 1rem;
-    margin: 0 auto 0.5rem;
-    height: 24px;
-    color: $color;
-    border: 2px solid $color;
-    border-radius: 12px;
-    box-sizing: border-box;
-    transition: background-color 200ms;
+  .steps {
+    width: 240px;
+    padding-right: 2rem;
 
-    &.active {
-      background-color: $color;
-      transition: background-color 50ms;
+    .step {
+      position: relative;
+
+      &.active span {
+        font-weight: bold;
+        color: $secondary;
+        background-color: $primary;
+        transition: background-color 50ms;
+      }
+
+      span {
+        display: block;
+        padding: 0 1rem;
+        margin: 0 auto 0.5rem;
+        line-height: 28px;
+        color: $primary;
+        text-align: center;
+        border: 2px solid $primary;
+        border-radius: 12px;
+        box-sizing: border-box;
+        transition: background-color 200ms;
+      }
+
+      hr {
+        position: absolute;
+        top: 12px;
+        right: -1.5rem;
+        padding: 0 0.5rem;
+        width: 100%;
+        border: 0;
+        border-bottom: 1px solid transparentize($primary, 0.5);
+        box-sizing: content-box;
+      }
+    }
+  }
+
+  .sources {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .source {
+      line-height: 28px;
+      margin-bottom: 0.5rem;
     }
   }
 }

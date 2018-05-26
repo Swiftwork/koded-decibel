@@ -1,0 +1,5 @@
+<article class="heat"
+  *ngFor="let heat of heats">
+  {{heat.name}}
+  <div *ngFor="let participant of heat.participants">{{participant.name}}</div>
+</article>

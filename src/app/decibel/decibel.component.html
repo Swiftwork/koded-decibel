@@ -1,1 +1,14 @@
-<div class="step" [class.active]="this.decibel > step" [style.width]="calculateWidth(i) + '%'" *ngFor="let step of steps; let i = index">{{step}}</div>
+<div class="steps">
+  <div class="step"
+    [class.active]="decibel > step"
+    *ngFor="let step of steps; let i = index">
+    <span [style.width]="calculateWidth(i) + '%'">{{step}}</span>
+
+    <hr [style.width]="calculateMargin(i) + '%'" />
+  </div>
+</div>
+
+<div class="sources">
+  <div class="source"
+    *ngFor="let level of levels | decibel:max">{{level.source}}</div>
+</div>

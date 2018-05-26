@@ -1,0 +1,67 @@
+[
+  {
+    "source": "Inaudiable",
+    "min": 0,
+    "max": 0
+  },
+  {
+    "source": "Breathing",
+    "min": 0,
+    "max": 10
+  },
+  {
+    "source": "Rustling leaves",
+    "min": 10,
+    "max": 20
+  },
+  {
+    "source": "Soft whisper",
+    "min": 20,
+    "max": 30
+  },
+  {
+    "source": "Running stream",
+    "min": 30,
+    "max": 40
+  },
+  {
+    "source": "Rainfall",
+    "min": 40,
+    "max": 50
+  },
+  {
+    "source": "Conversation",
+    "min": 50,
+    "max": 60
+  },
+  {
+    "source": "Vacuum cleaner",
+    "min": 60,
+    "max": 70
+  },
+  {
+    "source": "City traffic",
+    "min": 70,
+    "max": 80
+  },
+  {
+    "source": "Lawnmower",
+    "min": 80,
+    "max": 90
+  },
+  {
+    "source": "Train",
+    "min": 90,
+    "max": 100
+  },
+  {
+    "source": "Jackhammer",
+    "min": 100,
+    "max": 110
+  },
+  {
+    "source": "Small jet takeoff",
+    "min": 110,
+    "max": 120
+  }
+]
